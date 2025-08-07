@@ -6,7 +6,7 @@
 
         public int Ano { get; set; }
 
-        public string Sede { get; set; }
+        public string ? Sede { get; set; }
 
     }
 }

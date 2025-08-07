@@ -23,16 +23,16 @@ namespace Aula2projeto.Controllers
                     {
                         edicoes.Add(new Edicao
                         {
-                            codEdicao = reader.GetInt32("codedicao"),
-                            Ano = reader.GetInt32("ano"),
-                            Sede = reader.GetString("sede")
+                            codEdicao = reader.GetInt32("codEdicao"),
+                            Ano = reader.GetInt32("Ano"),
+                            Sede = reader.GetString("Sede")
                         });
 
 
                     }
                 }
             }
-            return View();
+            return View(edicoes);
         }
     }
 }
