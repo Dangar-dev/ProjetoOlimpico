@@ -502,3 +502,43 @@ insert into tbResultadosAtletas( codAtleta, codProva, codEdicao, resultado, meda
 (9, 130, 25, '1° Lugar','Ouro'),
 (9, 128, 25, '2° Lugar','Prata'),
 (9, 132, 25, '4° Lugar','');
+
+
+select * from tbedicao;
+
+         SELECT 
+             a.codAtleta,a.nomeAtleta,a.dataNascimento,a.sexo,c.codCidade, c.nomeCidade,e.nomeEstado,
+             m.codModalidade, m.nomeModalidade,p.nomeProva,r.resultado,r.medalha 
+                 FROM tbAtletas a
+                 JOIN tbCidades c ON c.codCidade = a.codCidade
+                 JOIN tbEstados e ON e.codEstado = c.codEstado
+                 JOIN tbResultadosatletas r ON r.codAtleta = a.codAtleta
+                 JOIN tbProvas p ON p.codProva = r.codProva
+                 JOIN tbModalidades m ON m.codModalidade = p.codModalidade
+                 WHERE a.codAtleta = @id;
+                 
+                 select * from tbCidades;
+                 
+                      SELECT p.nomeProva, e.ano, e.sede, r.resultado, r.medalha
+     FROM tbResultadosatletas r
+     JOIN tbProvas p ON p.codProva = r.codProva
+     JOIN tbEdicao e ON e.codedicao = r.codEdicao
+     WHERE r.codAtleta = @id;
+
+insert into tbModalidades(nomeModalidade) values ('Basquete');
+insert into tbCidades(nomeCidade,codEstado) values ('Belo Horizonte',33),('Porto Alegre',42);
+insert into tbProvas (nomeProva,codModalidade) values ('Vôlei Feminino',3),('Basquete Feminino',5);
+
+	INSERT INTO `tbAtletas` (`nomeAtleta`, `dataNascimento`, `sexo`, `altura`, `peso`, `codCidade`) VALUES
+	('Carolina "Carol" Demartini de Albuquerque', '1997-07-25', 'F', NULL, NULL, 144),
+    ('Fabiana "Fabi" Alvim de Oliveira', '1980-03-07', 'F', NULL, NULL, 106),
+    ('Marianne "Mari" Steinbrecher', '1983-08-23', 'F', NULL, NULL, 129),
+	('	Fernanda Neves Beling', '1982-12-05', 'F', NULL, NULL, 143);
+    
+    
+insert into tbResultadosAtletas( codAtleta, codProva, codEdicao, resultado, medalha) values
+	(10,133,21,'1° Lugar','Ouro'),
+    (11,133,21,'1° Lugar','Ouro'),
+    (12,133,21,'1° Lugar','Ouro'),
+    (13,134,21,'11° Lugar',Null);
+
