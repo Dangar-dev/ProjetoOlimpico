@@ -11,6 +11,8 @@
 
         public string resultado     { get; set; }
 
+        public string Atleta { get; set; }
+
         public string medalha { get; set; }
     }
 }

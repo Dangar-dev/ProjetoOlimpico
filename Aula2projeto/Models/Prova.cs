@@ -6,6 +6,6 @@
 
         public string nomeProva { get; set; }
 
-        public int codModalidaes { get; set; }
+        public int codModalidade { get; set; }
     }
 }
